@@ -1,4 +1,4 @@
-def v: String = "3.5.0"
+def v: String = "3.5.0-native"
 
 lazy val root = (project in file(".")).
   settings(
@@ -25,3 +25,4 @@ lazy val root = (project in file(".")).
     // scaladoc fix
     unmanagedClasspath in Compile += Attributed.blank(new java.io.File("doesnotexist"))
   )
+  .enablePlugins(ScalaNativePlugin)
